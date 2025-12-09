@@ -1,0 +1,20 @@
+<div class="auth-card">
+    <h2>Register</h2>
+    <div *ngIf="message" class="info">{{ message }}</div>
+
+
+    <label for="email">Email</label>
+    <input id="email" [(ngModel)]="email" type="email" />
+
+
+    <label for="password">Password</label>
+    <input id="password" [(ngModel)]="password" type="password" />
+
+
+    <button (click)="register()" [disabled]="loading">{{ loading ? 'Loading...' : 'Register' }}</button>
+
+
+    <p>
+        Already have an account? <a routerLink="/auth/login">Login</a>
+    </p>
+</div>

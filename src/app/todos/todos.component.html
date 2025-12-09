@@ -1,0 +1,21 @@
+<div class="todos">
+    <h2>Todos</h2>
+
+
+    <div class="new">
+        <input [(ngModel)]="newTitle" placeholder="Add todo..." />
+        <button (click)="addTodo()">Add</button>
+    </div>
+
+
+    <div *ngIf="loading">Loading...</div>
+
+
+    <ul>
+        <li *ngFor="let t of todos">
+            <input type="checkbox" [checked]="t.completed" (change)="toggleComplete(t)" />
+            <span [class.completed]="t.completed">{{ t.title }}</span>
+            <button (click)="deleteTodo(t)">Delete</button>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+<div class="auth-card">
+    <h2>Login</h2>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <label for="email">Email</label>
+    <input id="email" [(ngModel)]="email" type="email" />
+
+
+    <label for="password">Password</label>
+    <input id="password" [(ngModel)]="password" type="password" />
+
+
+    <button (click)="login()" [disabled]="loading">{{ loading ? 'Loading...' : 'Login' }}</button>
+
+
+    <p>
+        Don't have an account? <a routerLink="/auth/register">Register</a>
+    </p>
+</div>
